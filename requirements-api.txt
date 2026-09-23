@@ -1,0 +1,12 @@
+fastapi==0.141.1
+numpy==2.5.2
+pandas==3.0.5
+pydantic==2.13.5
+pydantic_core==2.46.5
+statsmodels==0.15.0
+uvicorn==0.53.0
+seaborn==0.13.2
+matplotlib==3.11.1
+requests==2.34.2
+cloudpickle==3.1.2
+pyarrow==25.0.1

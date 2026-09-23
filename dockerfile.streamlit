@@ -1,0 +1,14 @@
+FROM python:3.14-slim
+
+WORKDIR /dock_app
+
+ENV PYTHONPATH=/dock_app
+
+COPY requirements-streamlit.txt .
+
+RUN pip install --no-cache-dir -r requirements-streamlit.txt
+
+COPY app/ app/
+COPY src/ src/
+
+CMD ["streamlit", "run", "app/streamlit_app.py", "--server.address=0.0.0.0", "--server.port=8501"]

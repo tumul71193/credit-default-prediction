@@ -1,3 +1,4 @@
+import os
 import requests
 import streamlit as st
 import matplotlib.pyplot as plt
@@ -46,6 +47,7 @@ debt_income_ratio = st.number_input(
     step=0.01
 )
 
+API_URL = os.getenv("FASTAPI_URL", "http://127.0.0.1:8000")
 
 if st.button("Predict"):
 
@@ -58,10 +60,8 @@ if st.button("Predict"):
         "debt_income_ratio": debt_income_ratio
     }
 
-    print(customer_data)
-
     response = requests.post(
-        "http://127.0.0.1:8000/predict",
+        f"{API_URL}/predict",
         json=customer_data
     )
 
